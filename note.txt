@@ -1,0 +1,8 @@
+Step 1) Create your overall schema for the project with proper document
+eg: Data Dictionary.
+Step 2) You are required to create [Virtual] a small database with any
+DB you are comfortable.
+Step 3) Create API
+Step 4) Build Front end and integrate API
+Step 5) Review and add comments on your coding
+Step 6) Submit the zip file of your code.

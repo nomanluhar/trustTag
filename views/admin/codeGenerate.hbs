@@ -1,0 +1,42 @@
+<h3 style="text-align: center;color:white">{{viewTitle}}</h3>
+<div class="card">
+    <div class="card-body">
+        <form action="/admin/code/generator" method="POST" autocomplete="off">
+            <div class="mb-3">
+                <label for="productID" class="form-label">Product Id:</label>
+                <select class="form-select" name="product_id">
+                    <option selected disabled>--- Select Product Id ---</option>
+                    {{#each product}}
+                    <option value="{{product_id}}">{{this.product_name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="batchno" class="form-label">Batch No:</label>
+                <input type="text" class="form-control" id="batchno" name="batch_no" value="{{product.batch_no}}"
+                    required>
+                <div class="text-danger">{{product.batch_noError}}</div>
+            </div>
+            <div class="mb-3">
+                <label for="mfgdate" class="form-label">Mfg Date:</label>
+                <input type="date" class="form-control" id="mfgdate" name="mfg_date" value="{{product.mfg_date}}"
+                    required>
+                <div class="text-danger">{{productmfg_dateError}}</div>
+            </div>
+            <div class="mb-3">
+                <label for="expdate" class="form-label">Exp Date:</label>
+                <input type="date" class="form-control" id="expdate" name="exp_date"
+                    value="{{product.exp_date}}" required>
+                <div class="text-danger">{{product.exp_dateError}}</div>
+            </div>
+            <div class="mb-3">
+                <label for="qrcode" class="form-label">Unique QR Code:</label>
+                <input type="number" class="form-control" id="qrcode" name="qr_code"
+                    value="{{product.qr_code}}" required>
+                <div class="text-danger">{{product.qr_codeError}}</div>
+            </div>
+            <div class="text-danger">{{product.saveError}}</div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>

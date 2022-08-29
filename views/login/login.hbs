@@ -1,0 +1,23 @@
+<h3 style="text-align: center;color:white">{{viewTitle}}</h3>
+
+<div class="card">
+    <div class="card-body">
+        <form action="/login" method="POST" autocomplete="off">
+            <div class="mb-3">
+                <label for="nameInput" class="form-label">User Name:</label>
+                <input type="text" class="form-control" id="nameInput" name="user_name" value="{{userData.user_name}}"
+                    required>
+                <div class="text-danger">{{userData.usernameError}}</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="passwordInput" class="form-label">User Password:</label>
+                <input type="password" class="form-control" id="passwordInput" name="user_password"
+                    value="{{userData.user_password}}">
+                <div class="text-danger">{{userData.userPasswordError}}</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+    </div>  
+</div>
